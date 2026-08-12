@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Projeto sobre acessibilidade, mobilidade humana, óptica humana e tecnologias assistivas."
+    >
+
+    <title>Acessibilidade | Mobilidade e Óptica Humana</title>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            <span>●</span>
+            Acessibilidade
+        </div>
+
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="hamburger" aria-label="Abrir menu">
+            ☰
+        </label>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#mobilidade">Mobilidade</a>
+            <a href="#optica">Óptica Humana</a>
+            <a href="#tecnologia">Tecnologias</a>
+            <a href="#mapa">Mapa Conceitual</a>
+            <a href="#agradecimentos">Contato</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         BANNER
+    ========================== -->
+
+    <section class="banner" id="inicio">
+
+        <div class="banner-content">
+
+            <span class="tag">INCLUSÃO • AUTONOMIA • ACESSIBILIDADE</span>
+
+            <h1>
+                Mobilidade e<br>
+                Óptica Humana
+            </h1>
+
+            <p>
+                Conheça os desafios enfrentados por pessoas com deficiência
+                física e visual e descubra como a acessibilidade promove
+                inclusão, autonomia e qualidade de vida.
+            </p>
+
+            <a href="#mobilidade" class="banner-button">
+                Explorar projeto
+                <span>↓</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALERIA
+    ========================== -->
+
+    <section class="galeria" id="galeria">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                ACESSIBILIDADE
+            </span>
+
+            <h2>Mobilidade e Acessibilidade</h2>
+
+            <p>
+                A tecnologia e o planejamento de espaços acessíveis
+                são fundamentais para promover independência e inclusão.
+            </p>
+
+        </div>
+
+
+        <div class="carrossel">
+
+            <!-- Controles -->
+
+            <input
+                type="radio"
+                name="slide"
+                id="slide1"
+                checked
+            >
+
+            <input
+                type="radio"
+                name="slide"
+                id="slide2"
+            >
+
+            <input
+                type="radio"
+                name="slide"
+                id="slide3"
+            >
+
+
+            <!-- Slides -->
+
+            <div class="slides">
+
+                <div class="slide">
+
+                    <img
+                        src="https://jornal.usp.br/wp-content/uploads/2024/03/20240320_PCDs_Tecnologia_autonomis.jpg"
+                        alt="Pessoa utilizando tecnologia assistiva no computador"
+                    >
+
+                    <div class="slide-overlay">
+                        <span>Tecnologia Assistiva</span>
+                        <h3>Autonomia através da tecnologia</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img
+                        src="https://www.visaohospital.com.br/wp-content/uploads/2023/02/2023-3101-Acessibilidade-Blog.jpg"
+                        alt="Grupo de pessoas em reunião sobre acessibilidade"
+                    >
+
+                    <div class="slide-overlay">
+                        <span>Design Inclusivo</span>
+                        <h3>Construindo espaços para todos</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img
+                        src="https://cdn.evg.gov.br/cursos/615_EVG/imagem_curso_615.jpg"
+                        alt="Planejamento de acessibilidade urbana"
+                    >
+
+                    <div class="slide-overlay">
+                        <span>Acessibilidade Urbana</span>
+                        <h3>Mobilidade e inclusão nas cidades</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Navegação -->
+
+            <div class="navegacao">
+
+                <label for="slide1" aria-label="Slide 1"></label>
+
+                <label for="slide2" aria-label="Slide 2"></label>
+
+                <label for="slide3" aria-label="Slide 3"></label>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MOBILIDADE
+    ========================== -->
+
+    <section id="mobilidade">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                01 — MOBILIDADE
+            </span>
+
+            <h2>♿ Mobilidade Humana</h2>
+
+            <p>
+                A mobilidade humana está relacionada à capacidade de uma pessoa
+                se deslocar com autonomia e segurança. Pessoas com deficiência
+                física podem enfrentar obstáculos como calçadas inadequadas,
+                ausência de rampas, escadas e transporte público pouco acessível.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <article class="card">
+
+                <div class="card-icon">
+                    ↗
+                </div>
+
+                <h3>Rampas</h3>
+
+                <p>
+                    Facilitam o acesso de cadeirantes e pessoas com
+                    mobilidade reduzida.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    ⇅
+                </div>
+
+                <h3>Elevadores</h3>
+
+                <p>
+                    Garantem o acesso entre diferentes andares em
+                    prédios públicos e privados.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    ⠿
+                </div>
+
+                <h3>Piso Tátil</h3>
+
+                <p>
+                    Ajuda pessoas com deficiência visual a se orientarem
+                    em espaços públicos.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÓPTICA
+    ========================== -->
+
+    <section id="optica" class="section-dark">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                02 — VISÃO
+            </span>
+
+            <h2>👁️ Óptica Humana</h2>
+
+            <p>
+                A óptica humana estuda o funcionamento da visão. Algumas pessoas
+                apresentam baixa visão ou cegueira e utilizam recursos para
+                aumentar sua autonomia e participação na sociedade.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <article class="card">
+
+                <div class="card-icon">
+                    ◉
+                </div>
+
+                <h3>Baixa Visão</h3>
+
+                <p>
+                    Pessoas conseguem enxergar parcialmente, muitas vezes
+                    utilizando lentes especiais.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    ◌
+                </div>
+
+                <h3>Cegueira</h3>
+
+                <p>
+                    A perda total da visão pode ser compensada por tecnologias
+                    assistivas e pelo sistema Braille.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    ♡
+                </div>
+
+                <h3>Cão-guia</h3>
+
+                <p>
+                    Auxilia pessoas cegas na locomoção com segurança
+                    e independência.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECNOLOGIAS
+    ========================== -->
+
+    <section id="tecnologia">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                03 — INOVAÇÃO
+            </span>
+
+            <h2>💻 Tecnologias Assistivas</h2>
+
+            <p>
+                Recursos e tecnologias que ajudam pessoas com deficiência
+                a realizar atividades com maior autonomia e independência.
+            </p>
+
+        </div>
+
+
+        <ul class="technology-list">
+
+            <li>
+                <span>♿</span>
+                <div>
+                    <strong>Cadeira de rodas</strong>
+                    <small>Mobilidade e deslocamento</small>
+                </div>
+            </li>
+
+
+            <li>
+                <span>🦯</span>
+                <div>
+                    <strong>Bengala para pessoas cegas</strong>
+                    <small>Orientação e segurança</small>
+                </div>
+            </li>
+
+
+            <li>
+                <span>🐕</span>
+                <div>
+                    <strong>Cão-guia</strong>
+                    <small>Auxílio na locomoção</small>
+                </div>
+            </li>
+
+
+            <li>
+                <span>📱</span>
+                <div>
+                    <strong>Leitores de tela</strong>
+                    <small>Acesso a informações digitais</small>
+                </div>
+            </li>
+
+
+            <li>
+                <span>🔊</span>
+                <div>
+                    <strong>Comandos por voz</strong>
+                    <small>Interação através da voz</small>
+                </div>
+            </li>
+
+
+            <li>
+                <span>⠿</span>
+                <div>
+                    <strong>Sistema Braille</strong>
+                    <small>Leitura e escrita tátil</small>
+                </div>
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- =========================
+         MAPA CONCEITUAL
+    ========================== -->
+
+    <section id="mapa" class="mapa-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                04 — CONEXÕES
+            </span>
+
+            <h2>🧠 Mapa Conceitual</h2>
+
+            <p>
+                A acessibilidade reúne diferentes recursos e conhecimentos
+                voltados para autonomia, inclusão e igualdade de oportunidades.
+            </p>
+
+        </div>
+
+
+        <div class="mapa">
+
+            <div class="centro">
+                Acessibilidade
+            </div>
+
+
+            <div class="caixa mobilidade">
+
+                <span class="map-number">01</span>
+
+                <h3>♿ Mobilidade Humana</h3>
+
+                <p>
+                    Rampas • Elevadores • Piso Tátil • Inclusão •
+                    Transporte Acessível
+                </p>
+
+            </div>
+
+
+            <div class="caixa optica">
+
+                <span class="map-number">02</span>
+
+                <h3>👁️ Óptica Humana</h3>
+
+                <p>
+                    Baixa Visão • Cegueira • Lentes • Visão •
+                    Saúde Ocular
+                </p>
+
+            </div>
+
+
+            <div class="caixa tecnologia">
+
+                <span class="map-number">03</span>
+
+                <h3>💻 Tecnologias Assistivas</h3>
+
+                <p>
+                    Braille • Leitores de Tela • Bengala • Cão-guia
+                </p>
+
+            </div>
+
+
+            <div class="caixa objetivo">
+
+                <span class="map-number">04</span>
+
+                <h3>❤️ Objetivo</h3>
+
+                <p>
+                    Autonomia, Inclusão Social e Igualdade
+                    de Oportunidades
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer id="agradecimentos">
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <span>●</span>
+                Acessibilidade
+            </div>
+
+            <h2>Créditos</h2>
+
+            <p>
+                Quero agradecer ao professor Renato Pereira,
+                que me instruiu na criação deste projeto.
+            </p>
+
+            <div class="footer-line"></div>
+
+            <small>
+                © 2026 — Realizado por G. Silva C.
+            </small>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const slides = document.querySelector(".slides");
+
+        const radios = document.querySelectorAll(
+            'input[name="slide"]'
+        );
+
+        let currentSlide = 0;
+
+        function mudarSlide() {
+
+            currentSlide++;
+
+            if (currentSlide >= radios.length) {
+                currentSlide = 0;
+            }
+
+            radios[currentSlide].checked = true;
+
+            slides.style.transform =
+                `translateX(-${currentSlide * 33.333333}%)`;
+        }
+
+
+        /* Carrossel automático */
+
+        setInterval(mudarSlide, 5000);
+
+
+        /* Navegação manual */
+
+        radios.forEach((radio, index) => {
+
+            radio.addEventListener("change", () => {
+
+                currentSlide = index;
+
+                slides.style.transform =
+                    `translateX(-${currentSlide * 33.333333}%)`;
+
+            });
+
+        });
+
+
+        /* Fecha o menu mobile ao clicar em um link */
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const menuLinks =
+            document.querySelectorAll("nav a");
+
+        menuLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menuToggle.checked = false;
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
