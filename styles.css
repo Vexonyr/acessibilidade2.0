@@ -1,0 +1,1228 @@
+
+/* ==================================================
+   CONFIGURAÇÕES GERAIS
+================================================== */
+
+* {
+    margin: 1;
+    padding: 1;
+    box-sizing: border-box;
+
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background: #08111f;
+    --background-secondary: #0d1a2d;
+
+    --card: rgba(17, 31, 51, 0.88);
+    --card-hover: #192d48;
+
+    --primary: #4da3ff;
+    --primary-dark: #2476c7;
+
+    --text: #f4f7fb;
+    --text-secondary: #aebdce;
+
+    --border: rgba(255, 255, 255, 0.09);
+
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.30);
+}
+
+html {
+    scroll-padding-top: 80px;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(77, 163, 255, 0.08),
+            transparent 35%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+header {
+    width: 100%;
+    min-height: 72px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(8, 17, 31, 0.90);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--primary);
+
+    margin-right: 8px;
+}
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 27px;
+}
+
+nav a {
+    position: relative;
+
+    color: var(--text-secondary);
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--text);
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    bottom: -7px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--primary);
+
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    color: var(--text);
+}
+
+
+/* ==================================================
+   BANNER
+================================================== */
+
+.banner {
+    width: 100%;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 7%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 17, 31, 0.94),
+            rgba(8, 17, 31, 0.72),
+            rgba(8, 17, 31, 0.55)
+        ),
+
+        url(
+            "https://jornal.usp.br/wp-content/uploads/2024/03/20240320_PCDs_Tecnologia_autonomis.jpg"
+        )
+
+        center / cover no-repeat;
+}
+
+.banner::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    top: -200px;
+    right: -200px;
+
+    background: rgba(77, 163, 255, 0.15);
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+}
+
+.banner-content {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.tag {
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.banner h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    line-height: 1.03;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 25px;
+}
+
+.banner p {
+    max-width: 680px;
+
+    margin: 0 auto 35px;
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+}
+
+.banner-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 14px 24px;
+
+    background: var(--primary);
+
+    color: #06101d;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+.banner-button:hover {
+    transform: translateY(-3px);
+
+    background: #78bcff;
+
+    box-shadow:
+        0 12px 30px
+        rgba(77, 163, 255, 0.25);
+}
+
+
+/* ==================================================
+   SEÇÕES
+================================================== */
+
+section {
+    width: min(1150px, 90%);
+
+    margin: 0 auto;
+
+    padding: 100px 0;
+
+    text-align: center;
+}
+
+.section-heading {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+section h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.15;
+
+    letter-spacing: -1.8px;
+}
+
+section p {
+    color: var(--text-secondary);
+
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   GALERIA
+================================================== */
+
+.galeria {
+    width: 100%;
+    max-width: none;
+
+    padding:
+        100px 7%;
+
+    background: var(--background-secondary);
+
+    text-align: center;
+}
+
+.galeria .section-heading {
+    margin: 0 auto 40px;
+}
+
+
+/* ==================================================
+   CARROSSEL
+================================================== */
+
+.carrossel {
+    width: 100%;
+
+    max-width: 1150px;
+
+    height: 520px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border: 1px solid var(--border);
+
+    background: #000;
+
+    box-shadow: var(--shadow);
+}
+
+.carrossel input {
+    display: none;
+}
+
+.slides {
+    width: 300%;
+
+    height: 100%;
+
+    display: flex;
+
+    transition:
+        transform 0.65s
+        cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.slide {
+    width: 33.333333%;
+
+    height: 100%;
+
+    flex-shrink: 0;
+
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter: brightness(0.72);
+}
+
+.slide-overlay {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    padding:
+        100px 45px 45px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.88)
+        );
+
+    text-align: center;
+}
+
+.slide-overlay span {
+    color: var(--primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.slide-overlay h3 {
+    margin-top: 8px;
+
+    color: white;
+
+    font-size: 25px;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-33.333333%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-66.666666%);
+}
+
+
+/* ==================================================
+   NAVEGAÇÃO DO CARROSSEL
+================================================== */
+
+.navegacao {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    z-index: 20;
+}
+
+.navegacao label {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.navegacao label:hover {
+    background: white;
+
+    transform: scale(1.25);
+}
+
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.cards {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.card {
+    min-height: 220px;
+
+    padding: 32px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.16);
+
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    background: var(--card-hover);
+
+    border-color:
+        rgba(77, 163, 255, 0.4);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    color: var(--primary);
+
+    background:
+        rgba(77, 163, 255, 0.10);
+
+    border-radius: 12px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+
+    font-size: 19px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   SEÇÃO ÓPTICA
+================================================== */
+
+.section-dark {
+    width: 100%;
+    max-width: none;
+
+    padding:
+        100px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(77, 163, 255, 0.055),
+            transparent
+        );
+
+    text-align: center;
+}
+
+.section-dark .section-heading {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==================================================
+   TECNOLOGIAS
+================================================== */
+
+.technology-list {
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.technology-list li {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 18px;
+
+    padding: 20px 22px;
+
+    text-align: left;
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition: 0.3s ease;
+}
+
+.technology-list li:hover {
+    transform: translateY(-4px);
+
+    background: var(--card-hover);
+
+    border-color:
+        rgba(77, 163, 255, 0.4);
+}
+
+.technology-list li > span {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background:
+        rgba(77, 163, 255, 0.10);
+
+    border-radius: 11px;
+
+    font-size: 18px;
+}
+
+.technology-list strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+.technology-list small {
+    display: block;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   MAPA CONCEITUAL
+================================================== */
+
+.mapa-section {
+    width: 100%;
+    max-width: none;
+
+    padding:
+        100px 7%;
+
+    background:
+        var(--background-secondary);
+
+    text-align: center;
+}
+
+.mapa {
+    width: 100%;
+
+    max-width: 1000px;
+
+    height: 650px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(77, 163, 255, 0.09),
+            transparent 45%
+        );
+}
+
+
+/* centro */
+
+.centro {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    padding:
+        28px 42px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            #16385e
+        );
+
+    color: white;
+
+    border-radius: 18px;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.35);
+
+    z-index: 5;
+}
+
+
+/* caixas */
+
+.caixa {
+    position: absolute;
+
+    width: 285px;
+
+    padding: 25px;
+
+    background:
+        rgba(17, 31, 51, 0.90);
+
+    backdrop-filter: blur(15px);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.caixa:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(77, 163, 255, 0.4);
+}
+
+.caixa h3 {
+    margin:
+        8px 0 10px;
+
+    font-size: 16px;
+}
+
+.caixa p {
+    font-size: 12px;
+}
+
+.map-number {
+    color: var(--primary);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* posições */
+
+.mobilidade {
+    top: 45px;
+    left: 45px;
+}
+
+.optica {
+    top: 45px;
+    right: 45px;
+}
+
+.tecnologia {
+    bottom: 45px;
+    left: 45px;
+}
+
+.objetivo {
+    bottom: 45px;
+    right: 45px;
+}
+
+
+/* ==================================================
+   RODAPÉ
+================================================== */
+
+footer {
+    width: 100%;
+
+    padding:
+        70px 7%;
+
+    text-align: center;
+
+    background: #050c16;
+
+    border-top:
+        1px solid var(--border);
+}
+
+.footer-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+.footer-logo {
+    margin-bottom: 25px;
+
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.footer-logo span {
+    color: var(--primary);
+
+    margin-right: 8px;
+}
+
+footer h2 {
+    margin-bottom: 12px;
+
+    font-size: 24px;
+}
+
+footer p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+.footer-line {
+    width: 60px;
+
+    height: 1px;
+
+    margin: 30px auto;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+footer small {
+    color: #718197;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   TABLETS
+================================================== */
+
+@media (max-width: 850px) {
+
+    header {
+        padding: 0 5%;
+
+        flex-wrap: wrap;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        display: none;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding-bottom: 15px;
+    }
+
+    nav a {
+        width: 100%;
+
+        padding: 14px;
+
+        text-align: center;
+
+        border-top:
+            1px solid var(--border);
+    }
+
+    #menu-toggle:checked + .hamburger + nav {
+        display: flex;
+    }
+
+
+    /* banner */
+
+    .banner {
+        min-height: 600px;
+
+        padding: 90px 7%;
+    }
+
+    .banner h1 {
+        font-size: 3.2rem;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    /* cards */
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* tecnologias */
+
+    .technology-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* carrossel */
+
+    .carrossel {
+        height: 400px;
+    }
+
+
+    /* mapa */
+
+    .mapa {
+        height: auto;
+
+        min-height: 850px;
+
+        padding: 35px 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 18px;
+    }
+
+    .centro,
+    .caixa {
+        position: static;
+
+        transform: none;
+
+        width: 100%;
+
+        max-width: 500px;
+    }
+
+    .centro {
+        order: 0;
+    }
+
+    .mobilidade {
+        order: 1;
+    }
+
+    .optica {
+        order: 2;
+    }
+
+    .tecnologia {
+        order: 3;
+    }
+
+    .objetivo {
+        order: 4;
+    }
+
+    .caixa:hover {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* ==================================================
+   CELULARES
+================================================== */
+
+@media (max-width: 480px) {
+
+    header {
+        min-height: 65px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+
+    /* banner */
+
+    .banner {
+        min-height: 560px;
+
+        padding: 75px 6%;
+    }
+
+    .tag {
+        font-size: 9px;
+
+        letter-spacing: 1.4px;
+    }
+
+    .banner h1 {
+        font-size: 2.4rem;
+
+        letter-spacing: -2px;
+    }
+
+    .banner p {
+        font-size: 14px;
+    }
+
+
+    /* seções */
+
+    section {
+        width: 90%;
+
+        padding: 70px 0;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+
+    /* galeria */
+
+    .galeria,
+    .section-dark,
+    .mapa-section {
+        padding:
+            70px 5%;
+    }
+
+
+    /* carrossel */
+
+    .carrossel {
+        height: 300px;
+
+        border-radius: 18px;
+    }
+
+    .slide-overlay {
+        padding:
+            70px 22px 35px;
+    }
+
+    .slide-overlay h3 {
+        font-size: 18px;
+    }
+
+
+    /* cards */
+
+    .card {
+        padding: 25px;
+    }
+
+
+    /* tecnologias */
+
+    .technology-list li {
+        text-align: center;
+
+        justify-content: center;
+
+        flex-direction: column;
+    }
+
+
+    /* mapa */
+
+    .mapa {
+        min-height: auto;
+
+        padding: 25px 15px;
+    }
+
+    .centro {
+        padding: 22px;
+
+        font-size: 18px;
+    }
+
+    .caixa {
+        padding: 20px;
+    }
+
+
+    /* footer */
+
+    footer {
+        padding:
+            55px 6%;
+    }
+}
