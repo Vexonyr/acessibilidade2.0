@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -24,9 +23,148 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- ESTILOS DO WIDGET DE ACESSIBILIDADE -->
+    <style>
+        .acc-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .acc-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #0056b3;
+            color: #ffffff;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .acc-btn:hover {
+            transform: scale(1.1);
+            background-color: #004085;
+        }
+
+        .acc-menu {
+            display: none;
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            width: 210px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .acc-menu.active {
+            display: flex;
+        }
+
+        .acc-title {
+            margin: 0 0 6px 0;
+            font-weight: 700;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+
+        .acc-option-btn {
+            padding: 8px 12px;
+            border: 1px solid #0056b3;
+            background-color: #f8f9fa;
+            color: #0056b3;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: left;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .acc-option-btn:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+
+        .acc-reset {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
+
+        .acc-reset:hover {
+            background-color: #dc3545;
+            color: #ffffff;
+        }
+
+        /* Estilos de Alto Contraste */
+        body.high-contrast {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+        }
+
+        body.high-contrast header,
+        body.high-contrast section,
+        body.high-contrast footer,
+        body.high-contrast .card,
+        body.high-contrast .slide-overlay,
+        body.high-contrast .caixa {
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+        }
+
+        body.high-contrast a, 
+        body.high-contrast p, 
+        body.high-contrast h1, 
+        body.high-contrast h2, 
+        body.high-contrast h3, 
+        body.high-contrast span,
+        body.high-contrast strong,
+        body.high-contrast small {
+            color: #ffff00 !important; /* Texto em amarelo para maior visibilidade */
+        }
+
+        body.high-contrast .banner-button,
+        body.high-contrast .acc-option-btn {
+            border: 2px solid #ffff00 !important;
+            background-color: #000000 !important;
+            color: #ffff00 !important;
+        }
+    </style>
 </head>
 
 <body>
+
+    <!-- =========================
+         WIDGET DE ACESSIBILIDADE FLUTUANTE
+    ========================== -->
+    <div id="accessibility-widget" class="acc-widget">
+        <button id="acc-toggle-btn" class="acc-btn" aria-label="Abrir menu de acessibilidade" aria-expanded="false">
+            ♿
+        </button>
+        
+        <div id="acc-menu" class="acc-menu" aria-hidden="true">
+            <p class="acc-title">Acessibilidade</p>
+            <button onclick="changeFontSize(1)" class="acc-option-btn">A+ Aumentar Fonte</button>
+            <button onclick="changeFontSize(-1)" class="acc-option-btn">A- Diminuir Fonte</button>
+            <button onclick="toggleContrast()" class="acc-option-btn">◐ Alto Contraste</button>
+            <button onclick="resetAccessibility()" class="acc-option-btn acc-reset">↺ Restaurar Padronizado</button>
+        </div>
+    </div>
 
     <!-- =========================
          CABEÇALHO
@@ -624,8 +762,42 @@
 
         });
 
+        /* =========================
+           LÓGICA DO MENU DE ACESSIBILIDADE
+        ========================== */
+        const toggleBtn = document.getElementById('acc-toggle-btn');
+        const menu = document.getElementById('acc-menu');
+        let currentFontSize = 100; // Porcentagem original
+
+        // Alternar visualização do menu
+        toggleBtn.addEventListener('click', () => {
+            const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+            toggleBtn.setAttribute('aria-expanded', !isExpanded);
+            menu.setAttribute('aria-hidden', isExpanded);
+            menu.classList.toggle('active');
+        });
+
+        // Aumentar / Diminuir tamanho do texto
+        function changeFontSize(delta) {
+            currentFontSize += delta * 10;
+            if (currentFontSize < 80) currentFontSize = 80;   // Limite mínimo
+            if (currentFontSize > 150) currentFontSize = 150; // Limite máximo
+            document.body.style.fontSize = currentFontSize + '%';
+        }
+
+        // Alternar o modo de Alto Contraste
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        // Restaurar estado padrão
+        function resetAccessibility() {
+            currentFontSize = 100;
+            document.body.style.fontSize = '100%';
+            document.body.classList.remove('high-contrast');
+        }
+
     </script>
 
 </body>
 </html>
-```
